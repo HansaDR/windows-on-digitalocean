@@ -25,11 +25,11 @@ This guide provides a step-by-step process for installing Windows on a DigitalOc
 
 <img width="1901" height="808" alt="Screenshot 2025-08-16 144331" src="https://github.com/user-attachments/assets/840b7072-6fa0-48ae-abdf-a937425ee3c0" />
 
-4.  **Boot from Recovery ISO.** Go to the **Recovery** tab in the left-hand menu. Select the **"Boot from Recovery ISO"** option. Now, turn the droplet back on using the same power toggle button.
+3.  **Boot from Recovery ISO.** Go to the **Recovery** tab in the left-hand menu. Select the **"Boot from Recovery ISO"** option. Now, turn the droplet back on using the same power toggle button.
 
 <img width="1885" height="787" alt="2" src="https://github.com/user-attachments/assets/f864ba96-4009-43fc-af2c-a3f1614f0c92" />
 
-6.  **Access the Recovery Console.** After the droplet boots up, click the **"Recovery Console"** button to open the command line terminal.
+4.  **Access the Recovery Console.** After the droplet boots up, click the **"Recovery Console"** button to open the command line terminal.
 
 <img width="1891" height="787" alt="3" src="https://github.com/user-attachments/assets/c917ca54-98b6-4342-846f-7018356ecd1f" />
 
