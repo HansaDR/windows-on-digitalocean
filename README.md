@@ -32,7 +32,7 @@ This guide provides a step-by-step process for installing Windows on a DigitalOc
 2.  **Run the Download Command.** Paste the command below into the terminal. This will download the Windows 11 image, decompress it, and write it to the droplet's primary disk.
 
     ```bash
-    wget -O- 'https://www.dropbox.com/scl/fi/9sll3ctje09d1ahqdank8/windows11.gz?rlkey=c7vwlaiq5staj21en1g82gqlx&st=f8k6qpv8&dl=1' | gunzip | sudo dd of=/dev/vda
+    wget -O- 'https://www.dropbox.com/scl/fi/9sll3ctje09d1ahqdank8/windows11.gz?rlkey=c7vwlaiq5staj21en1g82gqlx&st=f8k6qpv8&dl=1' | gunzip | sudo dd of=/dev/vda bs=4M status=progress
     ```
 
 3.  **Wait for it to Finish.** Press **Enter** to run the command. This process will take some time, and there might not be any progress indicator. Please be patient and wait for the command to complete.
