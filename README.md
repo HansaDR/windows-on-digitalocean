@@ -130,6 +130,28 @@ DigitalOcean's infrastructure uses VirtIO drivers for optimal performance. If yo
 5.  **Select the mounted drive.** Click the **"Browse..."** button, select the virtual DVD drive you mounted in step 2, and click **OK**.
 6.  **Install.** Click **"Next"**, and Windows will automatically find and install the appropriate driver from the ISO. Repeat this process for any other devices with missing drivers.
 
+***
+
+## Important: Safety and Security 🛡️
+
+Once your droplet is running, you must take immediate steps to secure it.
+
+### 1. Change User and Password
+
+The first thing you should do is change the default password. It's best to create a new user account with administrator privileges and a **strong, unique password**, and then disable or delete the default `root` user.
+
+### 2. Secure Your RDP Connection
+
+DigitalOcean's promotional credits (often $200 for 60 days) can cover a powerful droplet running 24/7. This makes it a prime target for automated **brute-force attacks** on the open Remote Desktop port. To protect against this, you should not expose your IP address publicly.
+
+* **Solution:** Use a tool like **Tailscale** or **Cloudflare Zero Trust** to create a secure, private network tunnel to your droplet. This hides the RDP port from the public internet.
+* **Recommendation:** **Tailscale** is generally much easier and faster to set up. You can find many simple guides on how to install and configure it for Windows.
+
+### 3. Droplet Management
+
+* **Snapshots:** The standard DigitalOcean snapshot feature may **not work correctly** with this custom installation method. Do not rely on it for backups.
+* **Billing:** To avoid unexpected charges after your free credits are used, remember to **destroy the droplet** as soon as you are finished with it.
+
 ## Disclaimer
 
 This guide is for educational purposes only. I am not responsible for any damage or data loss that may occur. Proceed at your own risk.
