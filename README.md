@@ -57,8 +57,12 @@ You will need the following credentials to log in to Windows for the first time.
 1.  **Power Down.** Once the download command is finished, close the terminal window and **power off** the droplet using the toggle button in the dashboard.
 2.  **Boot from Hard Drive.** Go back to the **Recovery** tab and switch the boot option back to **"Boot from Hard Drive"**.
 3.  **Turn On the Droplet.** Power the droplet back on.
-4.  **Access Windows.** Navigate to the **Access** tab on the left-hand menu. Click the **"Launch Recovery Console"** button to open the Windows interface. **Do not use the regular Droplet Console.** Log in with the credentials provided above to begin your setup. <img width="1893" height="747" alt="6" src="https://github.com/user-attachments/assets/5de86ff5-a1ca-468c-afb5-19a64acdbebd" />
-(** If you selected an SSH key for authentication when creating the droplet, you must perform this one-time step. After the droplet is created, launch the regular Droplet Console. Wait until it shows a login prompt or a message like "Connecting to Droplet...". This allows the system to register your key. Once you see this, close the console window then open recovery console.) <img width="1281" height="991" alt="SSH" src="https://github.com/user-attachments/assets/9b0fa169-0c02-4bcf-84fd-93b94942df2b" />
+4.  **Access Windows.** Navigate to the **Access** tab on the left-hand menu. Click the **"Launch Recovery Console"** button to open the Windows interface. **Do not use the regular Droplet Console.** Log in with the credentials provided above to begin your setup.
+     <img width="1893" height="747" alt="6" src="https://github.com/user-attachments/assets/5de86ff5-a1ca-468c-afb5-19a64acdbebd" />
+
+(** If you selected an SSH key for authentication when creating the droplet, you must perform this one-time step. After the droplet is created, launch the regular Droplet Console. Wait until it shows a login prompt or a message like "Connecting to Droplet...". This allows the system to register your key. Once you see this, close the console window then open recovery console.)
+
+<img width="1281" height="991" alt="SSH" src="https://github.com/user-attachments/assets/9b0fa169-0c02-4bcf-84fd-93b94942df2b" />
 
 -----
 
@@ -70,7 +74,7 @@ After logging in, you must manually configure the network to get internet access
 
 2.  **Find Your Interface Name.** In the command prompt, type `netsh interface ipv4 show interfaces` and press **Enter**. Find your primary network connection name in the "Interface Name" column (e.g., "Ethernet"). <img width="1291" height="996" alt="7" src="https://github.com/user-attachments/assets/e5197c8a-d3a3-4085-bd28-5a2a706e3ce0" />
 
-3.  **Get Your Network Details.** Go to your droplet's page in the DigitalOcean dashboard and click the **Networking** tab to find its **Public IP Address**, **Netmask**, and **Gateway**. ( or ypu can find them below the recovery terminal)
+3.  **Get Your Network Details.** Go to your droplet's page in the DigitalOcean dashboard and click the **Networking** tab to find its **Public IP Address**, **Netmask**, and **Gateway**. ( or you can find them below the recovery terminal)
 
 4.  **Set Static IP and DNS.** Execute the following commands one by one. Replace `"YOUR_ETHERNET_NAME"` with the name from step 2, and the other values with the details from step 3.
 
