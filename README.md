@@ -22,18 +22,23 @@ This guide provides a step-by-step process for installing Windows on a DigitalOc
 
 1.  **Create a New Droplet.** In your DigitalOcean dashboard, create a new droplet. A plan with **8GB of RAM** is preferred. For the operating system, choose a Linux distribution like **Ubuntu 22.04 or 24.04**. This base OS will be wiped in a later step.
 2.  **Power Off the Droplet.** Once the droplet has finished creating, turn it off by clicking the **power toggle button** in the top-right corner of the droplet's management page.
-   <img width="1901" height="808" alt="Screenshot 2025-08-16 144331" src="https://github.com/user-attachments/assets/840b7072-6fa0-48ae-abdf-a937425ee3c0" />
 
-3.  **Boot from Recovery ISO.** Go to the **Recovery** tab in the left-hand menu. Select the **"Boot from Recovery ISO"** option. Now, turn the droplet back on using the same power toggle button.
-   <img width="1885" height="787" alt="2" src="https://github.com/user-attachments/assets/f864ba96-4009-43fc-af2c-a3f1614f0c92" />
+<img width="1901" height="808" alt="Screenshot 2025-08-16 144331" src="https://github.com/user-attachments/assets/840b7072-6fa0-48ae-abdf-a937425ee3c0" />
 
-4.  **Access the Recovery Console.** After the droplet boots up, click the **"Recovery Console"** button to open the command line terminal.
-   <img width="1891" height="787" alt="3" src="https://github.com/user-attachments/assets/c917ca54-98b6-4342-846f-7018356ecd1f" />
+4.  **Boot from Recovery ISO.** Go to the **Recovery** tab in the left-hand menu. Select the **"Boot from Recovery ISO"** option. Now, turn the droplet back on using the same power toggle button.
+
+<img width="1885" height="787" alt="2" src="https://github.com/user-attachments/assets/f864ba96-4009-43fc-af2c-a3f1614f0c92" />
+
+6.  **Access the Recovery Console.** After the droplet boots up, click the **"Recovery Console"** button to open the command line terminal.
+
+<img width="1891" height="787" alt="3" src="https://github.com/user-attachments/assets/c917ca54-98b6-4342-846f-7018356ecd1f" />
 
 
 ### 2\. Download and Write the Windows Image
 
-1.  **Access the Shell.** When the recovery console opens, you will see a menu with numbered options. Press **6** and hit **Enter** to exit to a shell prompt. <img width="1302" height="1005" alt="4" src="https://github.com/user-attachments/assets/9a8cebd2-8d3f-4644-9c30-ebe9967f98ee" />
+1.  **Access the Shell.** When the recovery console opens, you will see a menu with numbered options. Press **6** and hit **Enter** to exit to a shell prompt.
+ 
+<img width="1302" height="1005" alt="4" src="https://github.com/user-attachments/assets/9a8cebd2-8d3f-4644-9c30-ebe9967f98ee" />
 
 
 2.  **Run the Download Command.** Paste the command below into the terminal. This will download the Windows 11 image, decompress it, and write it to the droplet's primary disk.
@@ -42,7 +47,9 @@ This guide provides a step-by-step process for installing Windows on a DigitalOc
     wget -O- 'https://www.dropbox.com/scl/fi/9sll3ctje09d1ahqdank8/windows11.gz?rlkey=c7vwlaiq5staj21en1g82gqlx&st=f8k6qpv8&dl=1' | gunzip | sudo dd of=/dev/vda bs=4M status=progress
     ```
 
-3.  **Wait for it to Finish.** Press **Enter** to run the command. This process will take some time, and there might not be any progress indicator. Please be patient and wait for the command to complete. <img width="1032" height="725" alt="5" src="https://github.com/user-attachments/assets/840e2a38-5c24-4a01-91f8-d29aa5ce79bc" />
+3.  **Wait for it to Finish.** Press **Enter** to run the command. This process will take some time, and there might not be any progress indicator. Please be patient and wait for the command to complete.
+ 
+<img width="1032" height="725" alt="5" src="https://github.com/user-attachments/assets/840e2a38-5c24-4a01-91f8-d29aa5ce79bc" />
 
 
 ### 3\. Login Credentials
@@ -58,11 +65,12 @@ You will need the following credentials to log in to Windows for the first time.
 2.  **Boot from Hard Drive.** Go back to the **Recovery** tab and switch the boot option back to **"Boot from Hard Drive"**.
 3.  **Turn On the Droplet.** Power the droplet back on.
 4.  **Access Windows.** Navigate to the **Access** tab on the left-hand menu. Click the **"Launch Recovery Console"** button to open the Windows interface. **Do not use the regular Droplet Console.** Log in with the credentials provided above to begin your setup.
-     <img width="1893" height="747" alt="6" src="https://github.com/user-attachments/assets/5de86ff5-a1ca-468c-afb5-19a64acdbebd" />
+
+   <img width="1893" height="747" alt="6" src="https://github.com/user-attachments/assets/5de86ff5-a1ca-468c-afb5-19a64acdbebd" />
 
 (** If you selected an SSH key for authentication when creating the droplet, you must perform this one-time step. After the droplet is created, launch the regular Droplet Console. Wait until it shows a login prompt or a message like "Connecting to Droplet...". This allows the system to register your key. Once you see this, close the console window then open recovery console.)
 
-<img width="1281" height="991" alt="SSH" src="https://github.com/user-attachments/assets/9b0fa169-0c02-4bcf-84fd-93b94942df2b" />
+   <img width="1281" height="991" alt="SSH" src="https://github.com/user-attachments/assets/9b0fa169-0c02-4bcf-84fd-93b94942df2b" />
 
 -----
 
@@ -72,11 +80,13 @@ After logging in, you must manually configure the network to get internet access
 
 1.  **Open Command Prompt as Administrator.** Right-click the Start button and select **"Command Prompt (Admin)"** or **"Windows Terminal (Admin)"**.
 
-2.  **Find Your Interface Name.** In the command prompt, type `netsh interface ipv4 show interfaces` and press **Enter**. Find your primary network connection name in the "Interface Name" column (e.g., "Ethernet"). <img width="1291" height="996" alt="7" src="https://github.com/user-attachments/assets/e5197c8a-d3a3-4085-bd28-5a2a706e3ce0" />
+2.  **Find Your Interface Name.** In the command prompt, type `netsh interface ipv4 show interfaces` and press **Enter**. Find your primary network connection name in the "Interface Name" column (e.g., "Ethernet").
 
-3.  **Get Your Network Details.** Go to your droplet's page in the DigitalOcean dashboard and click the **Networking** tab to find its **Public IP Address**, **Netmask**, and **Gateway**. ( or you can find them below the recovery terminal)
+3.  <img width="1291" height="996" alt="7" src="https://github.com/user-attachments/assets/e5197c8a-d3a3-4085-bd28-5a2a706e3ce0" />
 
-4.  **Set Static IP and DNS.** Execute the following commands one by one. Replace `"YOUR_ETHERNET_NAME"` with the name from step 2, and the other values with the details from step 3.
+4.  **Get Your Network Details.** Go to your droplet's page in the DigitalOcean dashboard and click the **Networking** tab to find its **Public IP Address**, **Netmask**, and **Gateway**. ( or you can find them below the recovery terminal)
+
+5.  **Set Static IP and DNS.** Execute the following commands one by one. Replace `"YOUR_ETHERNET_NAME"` with the name from step 2, and the other values with the details from step 3.
 
     ```bash
     netsh interface ipv4 set address name="YOUR_ETHERNET_NAME" static YOUR_PUBLIC_IP YOUR_NETMASK YOUR_GATEWAY
@@ -108,9 +118,12 @@ To manage your droplet easily without using the web console, you should enable R
     ```bash
     sysdm.cpl
     ```
-2.  **Allow Remote Connections.** A "System Properties" window will appear. Go to the **Remote** tab, select the option **"Allow remote connections to this computer"**, and then click **Apply** and **OK**. <img width="1287" height="1001" alt="8" src="https://github.com/user-attachments/assets/f146ae70-0384-410c-ac42-0177557b837f" />
+2.  **Allow Remote Connections.** A "System Properties" window will appear. Go to the **Remote** tab, select the option **"Allow remote connections to this computer"**, and then click **Apply** and **OK**.
 
-3.  **Connect via RDP.** That's it\! You can now close the DigitalOcean console window. Use any RDP client (like the Microsoft Remote Desktop app) on your computer to connect to your droplet using its **Public IP Address** and the login credentials.
+3.  <img width="1287" height="1001" alt="8" src="https://github.com/user-attachments/assets/f146ae70-0384-410c-ac42-0177557b837f" />
+
+4.  **Connect via RDP.** That's it\! You can now close the DigitalOcean console window. Use any RDP client (like the Microsoft Remote Desktop app) on your computer to connect to your droplet using its **Public IP Address** and the login credentials.
+   
 -----
 ****************
 -----
@@ -126,10 +139,12 @@ If you notice that your C: drive doesn't reflect the full size of your Droplet's
 
 1.  **Download and install** a partition management tool.
 2.  Open the application, select your **C: drive**, and choose the **"Extend"** option.
-3.  From the drop-down menu, select the **unallocated space**. <img width="1912" height="1067" alt="T2" src="https://github.com/user-attachments/assets/8e70cf9b-8608-4870-9d8a-a80a5cd508b4" />
+3.  From the drop-down menu, select the **unallocated space**.
 
-4.  Drag the slider all the way to the end to use the maximum available space.
-5.  Click **OK**, and then click the **"Apply"** button to execute the changes.
+4.  <img width="1912" height="1067" alt="T2" src="https://github.com/user-attachments/assets/8e70cf9b-8608-4870-9d8a-a80a5cd508b4" />
+
+5.  Drag the slider all the way to the end to use the maximum available space.
+6.  Click **OK**, and then click the **"Apply"** button to execute the changes.
 
 ### Installing Missing Drivers
 
@@ -145,9 +160,11 @@ DigitalOcean's infrastructure uses VirtIO drivers for optimal performance. If yo
 2.  **Mount the ISO.** Once downloaded, right-click the file and select **"Mount"**. This will create a new virtual DVD drive.
 3.  **Update the driver.** Go to **Device Manager**, find the device with the missing driver (it will likely have a yellow exclamation mark), right-click it, and select **"Update driver"**.
 4.  **Browse for the driver.** Choose **"Browse my computer for drivers"**.
-5.  **Select the mounted drive.** Click the **"Browse..."** button, select the virtual DVD drive you mounted in step 2, and click **OK**. <img width="1081" height="737" alt="T4" src="https://github.com/user-attachments/assets/d843a78a-1a9a-4dad-b13c-ca4099c61da0" />
+5.  **Select the mounted drive.** Click the **"Browse..."** button, select the virtual DVD drive you mounted in step 2, and click **OK**.
 
-6.  **Install.** Click **"Next"**, and Windows will automatically find and install the appropriate driver from the ISO. Repeat this process for any other devices with missing drivers.
+6.  <img width="1081" height="737" alt="T4" src="https://github.com/user-attachments/assets/d843a78a-1a9a-4dad-b13c-ca4099c61da0" />
+
+7.  **Install.** Click **"Next"**, and Windows will automatically find and install the appropriate driver from the ISO. Repeat this process for any other devices with missing drivers.
 
 ***
 
