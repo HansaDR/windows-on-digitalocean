@@ -190,4 +190,4 @@ DigitalOcean's promotional credits (often $200 for 60 days) can cover a powerful
 
 ## Disclaimer
 
-This guide is for educational purposes only. I am not responsible for any damage or data loss that may occur. Proceed at your own risk.
+## This guide is for educational purposes only. I am not responsible for any damage or data loss that may occur. Proceed at your own risk. Warning: This guide demonstrates a technical process. It does not provide or imply a valid license for Microsoft Windows. Users are solely responsible for ensuring they have a legitimate license to install and run Windows in a cloud environment, in accordance with Microsoft's terms. Failure to do so may violate copyright law and the cloud provider's terms of service.
