@@ -12,7 +12,7 @@ This guide provides a step-by-step process for installing Windows on a DigitalOc
 ## Prerequisites
 
   * Access to a DigitalOcean account and the ability to create droplets. If you don't have an account, you can sign up using my referral link to get a credit:
-    [](https://www.digitalocean.com/?refcode=9ab72d603ab4&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+    (https://www.digitalocean.com/?refcode=9ab72d603ab4&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
 
 -----
 
