@@ -44,7 +44,7 @@ You will need the following credentials to log in to Windows for the first time.
   * **User:** `root`
   * **Password:** `123@@@`
 
-### 4\. Final Steps
+### 4\. Next Step
 
 1.  **Power Down.** Once the download command is finished, close the terminal window and **power off** the droplet using the toggle button in the dashboard.
 2.  **Boot from Hard Drive.** Go back to the **Recovery** tab and switch the boot option back to **"Boot from Hard Drive"**.
@@ -86,6 +86,49 @@ After logging in, you must manually configure the network to get internet access
     Your droplet should now be connected to the internet.
 
 -----
+
+
+### 5\. Enable Remote Desktop (RDP)
+
+To manage your droplet easily without using the web console, you should enable Remote Desktop.
+
+1.  **Open System Properties.** In the same Command Prompt window, type the following command and press **Enter**:
+    ```bash
+    sysdm.cpl
+    ```
+2.  **Allow Remote Connections.** A "System Properties" window will appear. Go to the **Remote** tab, select the option **"Allow remote connections to this computer"**, and then click **Apply** and **OK**.
+3.  **Connect via RDP.** That's it\! You can now close the DigitalOcean console window. Use any RDP client (like the Microsoft Remote Desktop app) on your computer to connect to your droplet using its **Public IP Address** and the login credentials.
+-----
+
+Of course. Here is the new troubleshooting section.
+
+-----
+
+## Troubleshooting 🛠️
+
+### Extending the Disk Partition
+
+If you notice that your C: drive doesn't reflect the full size of your Droplet's disk, you'll need to extend the partition manually. You can do this with a tool like **Minitool Partition Wizard**.
+
+1.  **Download and install** a partition management tool.
+2.  Open the application, select your **C: drive**, and choose the **"Extend"** option.
+3.  From the drop-down menu, select the **unallocated space**.
+4.  Drag the slider all the way to the end to use the maximum available space.
+5.  Click **OK**, and then click the **"Apply"** button to execute the changes.
+
+### Installing Missing Drivers
+
+DigitalOcean's infrastructure uses VirtIO drivers for optimal performance. If you see devices with missing drivers in the Device Manager (like the network adapter or disk controller), you'll need to install them.
+
+1.  **Download the VirtIO drivers.** You can get the ISO file from this link:
+    ```
+    https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.96/virtio-win.iso
+    ```
+2.  **Mount the ISO.** Once downloaded, right-click the file and select **"Mount"**. This will create a new virtual DVD drive.
+3.  **Update the driver.** Go to **Device Manager**, find the device with the missing driver (it will likely have a yellow exclamation mark), right-click it, and select **"Update driver"**.
+4.  **Browse for the driver.** Choose **"Browse my computer for drivers"**.
+5.  **Select the mounted drive.** Click the **"Browse..."** button, select the virtual DVD drive you mounted in step 2, and click **OK**.
+6.  **Install.** Click **"Next"**, and Windows will automatically find and install the appropriate driver from the ISO. Repeat this process for any other devices with missing drivers.
 
 ## Disclaimer
 
