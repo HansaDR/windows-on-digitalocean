@@ -53,7 +53,7 @@ You will need the following credentials to log in to Windows for the first time.
 
 -----
 
-### 4\. Configure the Network
+### 5\. Configure the Network
 
 After logging in, you must manually configure the network to get internet access. The mouse in the console can be laggy; this is normal.
 
@@ -88,7 +88,7 @@ After logging in, you must manually configure the network to get internet access
 -----
 
 
-### 5\. Enable Remote Desktop (RDP)
+### 6\. Enable Remote Desktop (RDP)
 
 To manage your droplet easily without using the web console, you should enable Remote Desktop.
 
