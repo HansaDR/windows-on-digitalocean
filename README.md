@@ -35,7 +35,7 @@ This guide provides a step-by-step process for installing Windows on a DigitalOc
     wget -O- 'https://www.dropbox.com/scl/fi/9sll3ctje09d1ahqdank8/windows11.gz?rlkey=c7vwlaiq5staj21en1g82gqlx&st=f8k6qpv8&dl=1' | gunzip | sudo dd of=/dev/vda
     ```
 
-3.  **Wait for it to Finish.** Press **Enter** to run the command. This process will take a significant amount of time, and there might not be any progress indicator. Please be patient and wait for the command to complete.
+3.  **Wait for it to Finish.** Press **Enter** to run the command. This process will take some time, and there might not be any progress indicator. Please be patient and wait for the command to complete.
 
 ### 3\. Login Credentials
 
@@ -50,6 +50,40 @@ You will need the following credentials to log in to Windows for the first time.
 2.  **Boot from Hard Drive.** Go back to the **Recovery** tab and switch the boot option back to **"Boot from Hard Drive"**.
 3.  **Turn On the Droplet.** Power the droplet back on.
 4.  **Access Windows.** Navigate to the **Access** tab on the left-hand menu. Click the **"Launch Recovery Console"** button to open the Windows interface. **Do not use the regular Droplet Console.** Log in with the credentials provided above to begin your setup.
+
+-----
+
+### 4\. Configure the Network
+
+After logging in, you must manually configure the network to get internet access. The mouse in the console can be laggy; this is normal.
+
+1.  **Open Command Prompt as Administrator.** Right-click the Start button and select **"Command Prompt (Admin)"** or **"Windows Terminal (Admin)"**.
+
+2.  **Find Your Interface Name.** In the command prompt, type `netsh interface ipv4 show interfaces` and press **Enter**. Find your primary network connection name in the "Interface Name" column (e.g., "Ethernet").
+
+3.  **Get Your Network Details.** Go to your droplet's page in the DigitalOcean dashboard and click the **Networking** tab to find its **Public IP Address**, **Netmask**, and **Gateway**.
+
+4.  **Set Static IP and DNS.** Execute the following commands one by one. Replace `"YOUR_ETHERNET_NAME"` with the name from step 2, and the other values with the details from step 3.
+
+    ```bash
+    netsh interface ipv4 set address name="YOUR_ETHERNET_NAME" static YOUR_PUBLIC_IP YOUR_NETMASK YOUR_GATEWAY
+    ```
+
+    ```bash
+    netsh interface ipv4 set dns name="YOUR_ETHERNET_NAME" static 8.8.8.8
+    ```
+
+    ```bash
+    netsh interface ipv4 add dns name="YOUR_ETHERNET_NAME" 8.8.4.4 index=2
+    ```
+
+    **Example:**
+
+    ```bash
+    netsh interface ipv4 set address name="Ethernet" static 152.42.240.118 255.255.240.0 152.42.220.1
+    ```
+
+    Your droplet should now be connected to the internet.
 
 -----
 
