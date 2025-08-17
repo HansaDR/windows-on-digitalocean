@@ -1,0 +1,16 @@
+```markdown
+# Legal / Licensing Notice
+
+Important: This repository contains only documentation and tooling to help install an operating system image onto a DigitalOcean droplet. It does NOT contain, distribute, or endorse redistribution of Microsoft Windows installation media or any other copyrighted software.
+
+- Microsoft Windows is proprietary software. You must obtain Windows installation media and a valid product license directly from Microsoft or an authorized reseller.
+- This repository does not provide a Windows image, serial keys, or any license entitlement. Any links in previous versions of this repository that point to Windows images or other copyrighted media have been removed.
+- Including a notice such as "for educational purposes only" does not authorize or legalize distribution of copyrighted material.
+- I (the repository owner) am not providing legal advice. If you need guidance about licensing or legal risks, consult a qualified attorney.
+
+Security & safety:
+- The instructions here can be destructive (they include disk write operations). Follow them only after verifying device names, checksums, and understanding the risk.
+- Remove or redact any hard-coded passwords or credentials. Do not publish default passwords.
+
+If you distribute a derivative of this repository, you must not include copyrighted media you do not own the rights to.
+```
